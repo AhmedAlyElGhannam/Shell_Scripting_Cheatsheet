@@ -18,8 +18,13 @@
 
 1. Scripts are text files that have execute permissions. Make sure to adjust its permissions to be able to execute it.
    ```
-   chmod 755 test.sh
+   chmod +x test.sh
    ```
+
+   the previous command makes the script execuable for all users, if you want to make it executtable for your user only use the following command
+   ```
+   chmod u+x test
+   ``` 
 
 1. Script extension does not matter. But, it is advisable to name scripts with the extension `.sh` to make it easily recognizable---**IT IS THE LAW!**
 
