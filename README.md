@@ -8,7 +8,7 @@
    #!/bin/bash
    ```
 
-2. Scripts are sourced by either:
+1. Scripts are sourced by either:
    ```
    bash test.sh
    ```
@@ -16,13 +16,14 @@
    ./test.sh
    ```
 
-3. Scripts are text files that have execute permissions. Make sure to adjust its permissions to be able to execute it.
+1. Scripts are text files that have execute permissions. Make sure to adjust its permissions to be able to execute it.
    ```
    chmod 755 test.sh
    ```
 
-4. Script extension does not matter. But, it is advisable to name scripts with the extension `.sh` to make it easily recognizable---**IT IS THE LAW!**
+1. Script extension does not matter. But, it is advisable to name scripts with the extension `.sh` to make it easily recognizable---**IT IS THE LAW!**
 
+1. Comments are written by writing a `#` sign before text.
 
 ## Variables _(NO SPACES BEFORE OR AFTER =)_
 
@@ -87,4 +88,43 @@
    ```
    read -p 'Enter Username: ' name
    read -sp 'Enter Password: ' pass
+   ```
+
+
+## Arithmetic Operations
+
+1. The keyword `let`---kinda like Rust---stores the result of an arithmetic operation inside a variable. All the forms below are valid.
+   ```
+   let hehe=60+9
+   let "hehe = 60 + 9"
+   let hehe++
+   let "hehe = $nice - 9 + 9"
+   ```
+
+1. Operators and their corresponding operation are:
+   1. +, -, \*, /	--> addition, subtraction, multiply, divide
+   1. var++	--> Increase the variable var by 1
+   1. var--	--> Decrease the variable var by 1
+   1. %	--> Modulus (Return the remainder after division)
+  
+1. The keyword `expr` returns the result of an aritmetic operation and **does not store it.** Beware that there must be space to separate expression elements.
+   ```
+   expr 50 + 19
+   ```
+
+1. A better and more versatile way to write and/or use aritmetic expressions is y writing them in `$((EXPR))`. This way, variables are substituted automatically without needing `$` before is, no need to nitpick over spaces before and after expressions, and expression can be either returned directly like `expr` or stored inside a variable like `let`. There is also **no need** to write `\` before `*` to perform multiplication.
+   ```
+   a=$(( 4 + 5 ))
+   a=$((3+5))
+   b=$(( a + 3 ))
+   b=$(( $a + 4 ))
+   (( b++ ))
+   (( b += 3 ))
+   a=$(( 4 * 5 ))
+   ```
+
+1. Although it is not an arithmetic operation, finding the length of a variable is sometimes useful. It is done by `${#VAR}`.
+   ```
+   hehe='Hello, bois'
+   echo ${#hehe} # 11
    ```
