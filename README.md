@@ -208,13 +208,14 @@
 
 1. Important tips for Case statement:
    1. Variable can be either a number or a string.
-   2. Each option must be ended with `;;`.
-   3. Default option is optional to add and is represented by an `*`.
+   1. Each option must be ended with `;;`.
+   1. Default option is optional to add and is represented by an `*`.
   
 
 ## Loops
 
 ### While Loop
+   
    1. A while loop is written like this:
       ```
       while [ <some test> ]
@@ -222,9 +223,11 @@
          <commands>
       done
       ```
+   
    1. While loops execute the commands inside its body _until the test is false_.
 
 ### Until Loop
+   
    1. An until loop is written like this:
       ```
       until [ <some test> ]
@@ -232,9 +235,11 @@
          <commands>
       done
       ```
+   
    1. Until loops execute the commands inside its body _until the test is true_.
 
 ### For Loop
+   
    1. A for loop is written like this:
       ```
       for var in <list>
@@ -242,7 +247,9 @@
          <commands>
       done
       ```
+   
    1. `var` can be a string and `<list>` can be multiple comma-separated strings.
+   
    1. Alternatively, we can loop of a list of numbers written like below. The step is `1` by default. If the step need to be specified, write it as `{1..5..2}`
       ```
       for value in {1..5}
@@ -250,6 +257,7 @@
          <command(s)>
       done
       ```
+   
    1. A for loop can be written in a C-like syntax:
       ```
       for ((num = 1; num <= 5; num++))
@@ -259,14 +267,76 @@
       ```
       
 ### Loop Control: Continue and Break
+   
    1. Just write `continue` to skip current loop iteration and `break` to break out of loop.
 
 
 ## Select Statement
+
 1. Select statement is used for creating a simple menu. Its syntax is as follows:
    ```
    select var in <list>
    do
       <commands>
    done
+   ```
+
+
+## Functions
+
+1. Function syntax has two formats:
+   ```
+   function_name () {
+      <commands>
+   }
+   ```
+   
+   ```
+   function function_name {
+      <commands>
+   }
+   ```
+
+1. Function implementation must appear before any call made to the function.
+
+1. Functions in shell script can take no/one/multiple arguments. But, unlike other programming languages, the `()` are only here for decoration.
+
+1. Both syntax formats are equally functional. It is down to personal preference on which one to use.
+
+1. Functions are called merely by writing their name in the script:
+   ```
+   # assume this function is implemented above
+   haha_fun
+   ```
+
+1. A Function can be called with a argument passed:
+   ```
+   function function_name {
+      echo $1 # *wink wink*
+   }
+
+   function_name haha # haha is the argument here
+   ```
+
+1. A function can have a return value. Typically, a return value of `0` is given when everything is successful. Recall: you can check the return value of the most recently run process by using `$?`.
+   ```
+   function function_name {
+      echo $1 # *wink wink*
+      return 0
+   }
+   ```
+
+1. Any variable defined in a function should be local. By default, any variable declared in a script is global. Use the keyword `local` to override that. It will not give a fatal error if it was not used but it is best practice. SO, FOLLOW IT!
+   ```
+   function function_name {
+      local haha=5
+      echo $1 haha # *wink wink*
+   }
+   ```
+
+1. Bro Tip: Functions can be used to override shell commands using the `command` keyword. Now, if the command `ls` was executed withing the script, `ls -lh` will be executed instead.
+   ```
+   ls () {
+      command ls -lh
+   }
    ```
