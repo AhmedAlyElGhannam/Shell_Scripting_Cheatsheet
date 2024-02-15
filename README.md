@@ -21,6 +21,8 @@
    chmod 755 test.sh
    ```
 
+4. Script extension does not matter. But, it is advisable to name scripts with the extension `.sh` to make it easily recognizable---**IT IS THE LAW!**
+
 
 ## Variables _(NO SPACES BEFORE OR AFTER =)_
 
