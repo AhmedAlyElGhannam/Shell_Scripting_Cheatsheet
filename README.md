@@ -77,3 +77,14 @@
   
 
 ## User Input
+
+1. Multiple variables can be read and stored using `read` command inside a script:
+   ```
+   read nice69 nice420 nice69420
+   ```
+
+1. User can be prompted to enter a value by a message using `-p` or `-sp` flags with `read`. `-p` gives a message to the user _and_ echos their input in terminal, `-sp` gives a message to the user _but does not_ echo their input in terminal---makes it hidden like passwords.
+   ```
+   read -p 'Enter Username: ' name
+   read -sp 'Enter Password: ' pass
+   ```
