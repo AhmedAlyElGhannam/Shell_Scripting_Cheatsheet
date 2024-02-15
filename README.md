@@ -64,17 +64,17 @@
    ```
    
 1. Special variables:
-   1. $0 - The name of the Bash script.
-   1. $1 - $9 - The first 9 arguments to the Bash script. (As mentioned above.)
-   1. $# - How many arguments were passed to the Bash script.
-   1. $@ - All the arguments supplied to the Bash script.
-   1. $? - The exit status of the most recently run process.
-   1. $$ - The process ID of the current script.
-   1. $USER - The username of the user running the script.
-   1. $HOSTNAME - The hostname of the machine the script is running on.
-   1. $SECONDS - The number of seconds since the script was started.
-   1. $RANDOM - Returns a different random number each time is it referred to.
-   1. $LINENO - Returns the current line number in the Bash script.
+   1. `$0` --> The name of the Bash script.
+   1. `$1` --> $9 - The first 9 arguments to the Bash script. (As mentioned above.)
+   1. `$#` --> How many arguments were passed to the Bash script.
+   1. `$@` --> All the arguments supplied to the Bash script.
+   1. `$?` --> The exit status of the most recently run process.
+   1. `$$` --> The process ID of the current script.
+   1. `$USER` --> The username of the user running the script.
+   1. `$HOSTNAME` --> The hostname of the machine the script is running on.
+   1. `$SECONDS` --> The number of seconds since the script was started.
+   1. `$RANDOM` --> Returns a different random number each time is it referred to.
+   1. `$LINENO` --> Returns the current line number in the Bash script.
   
 
 ## User Input
@@ -102,10 +102,10 @@
    ```
 
 1. Operators and their corresponding operation are:
-   1. +, -, \*, /	--> addition, subtraction, multiply, divide
-   1. var++	--> Increase the variable var by 1
-   1. var--	--> Decrease the variable var by 1
-   1. %	--> Modulus (Return the remainder after division)
+   1. `+, -, \*, /`	--> Addition, subtraction, multiply, divide---Note that an escape character is used before `*` since it also stands for wildcard.
+   1. `var++`	--> Increase the variable var by 1.
+   1. `var--`	--> Decrease the variable var by 1.
+   1. `%`	--> Modulus (Return the remainder after division).
   
 1. The keyword `expr` returns the result of an aritmetic operation and **does not store it.** Beware that there must be space to separate expression elements.
    ```
@@ -141,20 +141,20 @@
    ```
 
 1. The following operators can be used in the `[ <test> ]` line. Note that the `[ ]` is a reference to the command `test` which can be used to test the expression before writing it in an if statement.
-   1. ! EXPRESSION --> The EXPRESSION is false.
-   1. -n STRING --> The length of STRING is greater than zero.
-   1. -z STRING --> The lengh of STRING is zero---i.e.; it is an empty string.
-   1. STRING1 = STRING2 --> STRING1 is equal to STRING2 _as a string in terms of elements and their lengths_
-   1. STRING1 != STRING2 --> STRING1 is not equal to STRING2 _as a string in terms of elements and their lengths_
-   1. INTEGER1 -eq INTEGER2 --> INTEGER1 is _numerically_ equal to INTEGER2
-   1. INTEGER1 -gt INTEGER2 --> INTEGER1 is _numerically_ greater than INTEGER2
-   1. INTEGER1 -lt INTEGER2 --> INTEGER1 is _numerically_ less than INTEGER2
-   1. -d FILE --> FILE exists and is a directory.
-   1. -e FILE --> FILE exists.
-   1. -r FILE --> FILE exists and the read permission is granted.
-   1. -s FILE --> FILE exists and it's size is greater than zero (ie. it is not empty).
-   1. -w FILE --> FILE exists and the write permission is granted.
-   1. -x FILE --> FILE exists and the execute permission is granted.
+   1. `! EXPRESSION` --> The EXPRESSION is false.
+   1. `-n STRING` --> The length of STRING is greater than zero.
+   1. `-z STRING` --> The lengh of STRING is zero---i.e.; it is an empty string.
+   1. `STRING1 = STRING2` --> STRING1 is equal to STRING2 _as a string in terms of elements and their lengths_
+   1. `STRING1 != STRING2` --> STRING1 is not equal to STRING2 _as a string in terms of elements and their lengths_
+   1. `INTEGER1 -eq INTEGER2` --> INTEGER1 is _numerically_ equal to INTEGER2
+   1. `INTEGER1 -gt INTEGER2` --> INTEGER1 is _numerically_ greater than INTEGER2
+   1. `INTEGER1 -lt INTEGER2` --> INTEGER1 is _numerically_ less than INTEGER2
+   1. `-d FILE` --> FILE exists and is a directory.
+   1. `-e FILE` --> FILE exists.
+   1. `-r FILE` --> FILE exists and the read permission is granted.
+   1. `-s FILE` --> FILE exists and it's size is greater than zero (ie. it is not empty).
+   1. `-w FILE` --> FILE exists and the write permission is granted.
+   1. `-x FILE` --> FILE exists and the execute permission is granted.
   
 1. If-else statement syntax is written as:
    ```
