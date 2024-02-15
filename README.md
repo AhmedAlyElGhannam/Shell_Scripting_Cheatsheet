@@ -188,3 +188,26 @@
    .
    ```
 
+
+## Case Statement
+
+1. Case statement is written like this:
+   ```
+   case <variable> in
+      <pattern 1>)
+         <commands>
+         ;;
+      <pattern 2>)
+         <other commands>
+         ;;
+      *) # anything else---aka default
+         <default command(s)>
+         ;;
+   esac
+   ```
+
+1. Important tips for Case statement:
+   1. Variable can be either a number or a string.
+   2. Each option must be ended with `;;`.
+   3. Default option is optional to add and is represented by an `*`.
+  
