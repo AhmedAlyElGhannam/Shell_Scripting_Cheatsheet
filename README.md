@@ -1,9 +1,9 @@
-# Bash_Scripting_Cheatsheet
+# Shell_Scripting_Cheatsheet
 
 
 ## Basics
 
-1. Bash scripts always start with a shebang (#!) + the shell used to interpret the script (bash, sh, ...)
+1. Shell scripts always start with a shebang `#!` + the shell used to interpret the script (bash, sh, ...)
    ```
    #!/bin/bash
    ```
