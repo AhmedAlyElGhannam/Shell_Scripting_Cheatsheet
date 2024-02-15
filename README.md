@@ -128,3 +128,63 @@
    hehe='Hello, bois'
    echo ${#hehe} # 11
    ```
+
+
+## If Statements
+
+1. If statement syntax is as shown. Note that the condition you are testing is written between square brackets. Notice that `if` is ended by `fi`; this is a common occurance in shell scripting syntax.
+   ```
+   if [ <some test> ]
+   then
+      <commands>
+   fi
+   ```
+
+1. The following operators can be used in the `[ <test> ]` line. Note that the `[ ]` is a reference to the command `test` which can be used to test the expression before writing it in an if statement.
+   1. ! EXPRESSION --> The EXPRESSION is false.
+   1. -n STRING --> The length of STRING is greater than zero.
+   1. -z STRING --> The lengh of STRING is zero---i.e.; it is an empty string.
+   1. STRING1 = STRING2 --> STRING1 is equal to STRING2 _as a string in terms of elements and their lengths_
+   1. STRING1 != STRING2 --> STRING1 is not equal to STRING2 _as a string in terms of elements and their lengths_
+   1. INTEGER1 -eq INTEGER2 --> INTEGER1 is _numerically_ equal to INTEGER2
+   1. INTEGER1 -gt INTEGER2 --> INTEGER1 is _numerically_ greater than INTEGER2
+   1. INTEGER1 -lt INTEGER2 --> INTEGER1 is _numerically_ less than INTEGER2
+   1. -d FILE --> FILE exists and is a directory.
+   1. -e FILE --> FILE exists.
+   1. -r FILE --> FILE exists and the read permission is granted.
+   1. -s FILE --> FILE exists and it's size is greater than zero (ie. it is not empty).
+   1. -w FILE --> FILE exists and the write permission is granted.
+   1. -x FILE --> FILE exists and the execute permission is granted.
+  
+1. If-else statement syntax is written as:
+   ```
+   if [ <some test> ]
+   then
+      <commands>
+   else
+      <other commands>
+   fi
+   ```
+
+1. If-else-if statement is written as:
+   ```
+   if [ <some test> ]
+   then
+      <commands>   
+   elif [ <some test> ]
+   then
+      <different commands>
+   else
+      <other commands>
+   fi
+   ```
+
+1. Boolean expressions---such as `||` and `&&`---can be used to make a compound test for an if statement:
+   ```
+   if [ -r $1 ] && [ -s $1 ]
+   then
+   .
+   .
+   .
+   ```
+
