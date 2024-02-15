@@ -211,3 +211,62 @@
    2. Each option must be ended with `;;`.
    3. Default option is optional to add and is represented by an `*`.
   
+
+## Loops
+
+### While Loop
+   1. A while loop is written like this:
+      ```
+      while [ <some test> ]
+      do
+         <commands>
+      done
+      ```
+   1. While loops execute the commands inside its body _until the test is false_.
+
+### Until Loop
+   1. An until loop is written like this:
+      ```
+      until [ <some test> ]
+      do
+         <commands>
+      done
+      ```
+   1. Until loops execute the commands inside its body _until the test is true_.
+
+### For Loop
+   1. A for loop is written like this:
+      ```
+      for var in <list>
+      do
+         <commands>
+      done
+      ```
+   1. `var` can be a string and `<list>` can be multiple comma-separated strings.
+   1. Alternatively, we can loop of a list of numbers written like below. The step is `1` by default. If the step need to be specified, write it as `{1..5..2}`
+      ```
+      for value in {1..5}
+      do
+         <command(s)>
+      done
+      ```
+   1. A for loop can be written in a C-like syntax:
+      ```
+      for ((num = 1; num <= 5; num++))
+      do
+         echo $num
+      done
+      ```
+      
+### Loop Control: Continue and Break
+   1. Just write `continue` to skip current loop iteration and `break` to break out of loop.
+
+
+## Select Statement
+1. Select statement is used for creating a simple menu. Its syntax is as follows:
+   ```
+   select var in <list>
+   do
+      <commands>
+   done
+   ```
