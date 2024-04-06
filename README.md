@@ -345,3 +345,10 @@
       command ls -lh
    }
    ```
+
+
+## Creating an Alias (somehow this flew off my radar)
+
+   ```
+   alias nickname="ACTUAL COMMAND"
+   ```
