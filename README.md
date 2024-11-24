@@ -70,7 +70,7 @@
    
 1. Special variables:
    1. `$0` --> The name of the Bash script.
-   1. `$1` --> $9 - The first 9 arguments to the Bash script. (As mentioned above.)
+   1. `$1` - `$9` --> The first 9 arguments to the Bash script. (As mentioned above.)
    1. `$#` --> How many arguments were passed to the Bash script.
    1. `$@` --> All the arguments supplied to the Bash script.
    1. `$?` --> The exit status of the most recently run process.
